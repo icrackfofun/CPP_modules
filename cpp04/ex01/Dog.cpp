@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:49:33 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/22 23:55:44 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/29 00:46:14 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Dog::Dog()
 {
 	std::cout << "Dog constructed!\n";
 	type = "Dog";
+	brain = new Brain();
 }
 
 Dog::Dog(const Dog &old)
@@ -35,6 +36,7 @@ Dog	&Dog::operator=(const Dog &old)
 Dog::~Dog()
 {
 	std::cout << "Dog destroyed!\n";
+	delete[] brain;
 }
 
 void	Dog::makeSound() const
