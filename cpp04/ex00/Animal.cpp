@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:12:56 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/23 00:12:19 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/29 00:15:14 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Animal::Animal()
 Animal::Animal(const Animal &old)
 {
 	std::cout << "Animal Copy Constructor Called\n";
-	*this = old;
+	this->type = old.type;
 }
 Animal	&Animal::operator=(const Animal &old)
 {

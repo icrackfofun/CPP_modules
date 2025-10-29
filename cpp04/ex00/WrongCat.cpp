@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 00:14:24 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/23 00:15:56 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/29 00:16:04 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongCat::WrongCat()
 WrongCat::WrongCat(const WrongCat &old)
 {
 	std::cout << "Wrong Cat Copy Constructor Called\n";
-	*this = old;
+	this->type = old.type;
 }
 WrongCat	&WrongCat::operator=(const WrongCat &old)
 {

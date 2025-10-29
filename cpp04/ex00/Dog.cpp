@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:49:33 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/22 23:55:44 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/29 00:14:20 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ Dog::Dog()
 Dog::Dog(const Dog &old)
 {
 	std::cout << "Dog Copy Constructor Called\n";
-	*this = old;
+	this->type = old.type;
 }
+
 Dog	&Dog::operator=(const Dog &old)
 {
 	std::cout << "Dog Copy Assignment Operator Called\n";
