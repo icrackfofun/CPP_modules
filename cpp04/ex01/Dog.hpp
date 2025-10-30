@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:46:07 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/29 00:29:45 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/30 00:01:23 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Dog : public Animal
 		Dog	&operator=(const Dog &old);
 		~Dog();
 
+		Brain	*getBrain();
 		void	makeSound() const;
 };
 

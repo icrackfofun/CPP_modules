@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:56:50 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/29 00:30:57 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/30 00:02:17 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Cat : public Animal
 		Cat	&operator=(const Cat &old);
 		~Cat();
 
+		Brain	*getBrain();
 		void	makeSound() const;
 };
 

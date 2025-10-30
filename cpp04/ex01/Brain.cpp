@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 00:35:30 by psantos-          #+#    #+#             */
-/*   Updated: 2025/10/29 00:40:57 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/10/29 23:58:43 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,23 @@ Brain::Brain()
 
 Brain::Brain(const Brain &old)
 {
-	std::cout << "Animal Copy Constructor Called\n";
+	std::cout << "Brain Copy Constructor Called\n";
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = old.ideas[i];
 }
 
 Brain	&Brain::operator=(const Brain &old)
 {
-	std::cout << "Animal Copy Assignment Operator Called\n";
+	std::cout << "Brain Copy Assignment Operator Called\n";
+	if (this != &old)
+	{
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = old.ideas[i];
+	}
+	return *this;
 }
 
 Brain::~Brain()
 {
-	std::cout << "Animal destroyed!\n";
+	std::cout << "Brain destroyed!\n";
 }
