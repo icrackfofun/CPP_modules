@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 17:07:23 by psantos-          #+#    #+#             */
-/*   Updated: 2025/12/04 17:07:46 by psantos-         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:18:52 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int main()
 
     // Array with 5 ints
     Array<int> numbers(5);
+	std::cout << "Array numbers after default initialization:" << std::endl;
+    for (std::size_t i = 0; i < numbers.size(); ++i)
+        std::cout << numbers[i] << std::endl;
     for (std::size_t i = 0; i < numbers.size(); ++i)
         numbers[i] = i * 10;
 
@@ -51,6 +54,17 @@ int main()
     {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
+
+	// Default-initialize a single int
+    int* a = new int(); //
+    std::cout << "*a = " << *a << std::endl;
+    delete a;
+
+    // Array of strings using Array template
+    Array<std::string> words(3);
+    std::cout << "Array of strings after default initialization:" << std::endl;
+    for (std::size_t i = 0; i < words.size(); ++i)
+        std::cout << "[" << i << "] = '" << words[i] << "'" << std::endl;
 
     return 0;
 }
