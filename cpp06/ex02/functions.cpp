@@ -6,14 +6,14 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:46:02 by psantos-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:52:09 by psantos-         ###   ########.fr       */
+/*   Updated: 2026/01/10 23:41:37 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.hpp"
 
 Base* generate(void) {
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    std::srand(static_cast<unsigned int>(std::time(NULL)));
     int r = std::rand() % 3;
 
     if (r == 0)
@@ -40,19 +40,19 @@ void identify(Base& p) {
         (void)dynamic_cast<A&>(p);
         std::cout << "A\n";
         return;
-    } catch (std::bad_cast&) {}
+    } catch (const std::exception &e) {}
 
     try {
         (void)dynamic_cast<B&>(p);
         std::cout << "B\n";
         return;
-    } catch (std::bad_cast&) {}
+    } catch (const std::exception &e) {}
 
     try {
         (void)dynamic_cast<C&>(p);
         std::cout << "C\n";
         return;
-    } catch (std::bad_cast&) {}
+    } catch (const std::exception &e) {}
 
     std::cout << "Unknown\n";
 }

@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:02:47 by psantos-          #+#    #+#             */
-/*   Updated: 2025/11/27 17:13:45 by psantos-         ###   ########.fr       */
+/*   Updated: 2026/01/10 23:33:36 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ AForm* Intern::makeForm(const std::string &formName, const std::string &target) 
     }
 
     std::cerr << "Error: form \"" << formName << "\" does not exist." << std::endl;
-    return nullptr;
+    return NULL;
 }

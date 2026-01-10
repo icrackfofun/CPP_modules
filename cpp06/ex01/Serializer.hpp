@@ -6,12 +6,13 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:25:00 by psantos-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:32:26 by psantos-         ###   ########.fr       */
+/*   Updated: 2026/01/10 23:40:26 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Data.hpp"
+#include <stdint.h>
 #include <string>
 
 class Serializer

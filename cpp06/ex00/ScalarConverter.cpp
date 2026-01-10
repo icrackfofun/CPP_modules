@@ -6,7 +6,7 @@
 /*   By: psantos- <psantos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:38:56 by psantos-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:22:19 by psantos-         ###   ########.fr       */
+/*   Updated: 2026/01/10 23:39:43 by psantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static bool isDouble(const std::string &s) {
 static bool isFloat(const std::string &s) {
     if (s == "+inff" || s == "-inff" || s == "nanf")
         return true;
-    if (s.back() != 'f')
+    if (s[s.length() - 1] != 'f')
         return false;
     std::string sub = s.substr(0, s.length() - 1);
     char *end;
@@ -53,9 +53,9 @@ static bool isFloat(const std::string &s) {
     return (*end == '\0' && errno != ERANGE);
 }
 
-//only ' + char + ', else is not printable or empty/string
+// write char in console with " + ' + char + ' + ", else is won't be recognized
 static bool isChar(const std::string &s) {
-    return (s.length() == 3 && s.front() == '\'' && s.back() == '\'');
+    return (s.length() == 3 && s[0] == '\'' && s[s.length() - 1] == '\'');
 }
 
 //handle conversion from all types
@@ -117,13 +117,13 @@ void ScalarConverter::convert(const std::string &literal) {
         value = static_cast<double>(literal[1]);
     }
     else if (isInt(literal)) {
-        value = static_cast<double>(std::strtol(literal.c_str(), nullptr, 10));
+        value = static_cast<double>(std::strtol(literal.c_str(), NULL, 10));
     }
     else if (isFloat(literal)) {
-        value = static_cast<double>(std::strtof(literal.c_str(), nullptr));
+        value = static_cast<double>(std::strtof(literal.c_str(), NULL));
     }
     else if (isDouble(literal)) {
-        value = std::strtod(literal.c_str(), nullptr);
+        value = std::strtod(literal.c_str(), NULL);
     }
     else {
         std::cout << "Invalid literal\n";
